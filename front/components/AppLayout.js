@@ -4,7 +4,11 @@ import Link from 'next/link'; // next 자체 라우터
 import {Menu, Input, Row, Col} from'antd';
 import UserProfile from '../components/UserProfile'
 import LoginForm from '../components/LoginForm'
+import styled  from 'styled-components';
 
+const SearchInput = styled(Input.Search)`
+    vertical-align : middle;
+`
 
 const AppLayout = ({children})=>{
     const [isLogggedin, setIsLogggedin] = useState(false);
@@ -18,7 +22,7 @@ const AppLayout = ({children})=>{
                     <Link href="/profile"><a>프로필</a></Link>
                 </Menu.Item>
                 <Menu.Item>
-                    <Input.Search enterButton style={{verticalAlign:'middle'}}/>
+                    <SearchInput enterButton/>
                 </Menu.Item>    
                 <Menu.Item>
                     <Link href="/signup"><a>회원가입</a></Link>
